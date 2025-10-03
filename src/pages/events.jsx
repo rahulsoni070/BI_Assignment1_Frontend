@@ -8,19 +8,21 @@ export default function Event() {
   const searchQuery = searchParams.get("search")?.toLowerCase() || ""
   const filterType = searchParams.get("type") || ""
 
-const filteredData = data?.filter((event) => {
-  const inTitle = event.title.toLowerCase().includes(searchQuery)
-  const inTags = event.eventTags?.some((tag) =>
-    tag.toLowerCase().includes(searchQuery)
-  )
+const filteredData = Array.isArray(data)
+  ? data.filter((event) => {
+      const inTitle = event.title.toLowerCase().includes(searchQuery)
+      const inTags = event.eventTags?.some((tag) =>
+        tag.toLowerCase().includes(searchQuery)
+      )
 
-  const matchesType =
-  !filterType || filterType === "EventType" || filterType === "Both"
-    ? true
-    : event.eventType === filterType
+      const matchesType =
+        !filterType || filterType === "EventType" || filterType === "Both"
+          ? true
+          : event.eventType === filterType
 
-  return (inTitle || inTags) && matchesType
-})
+      return (inTitle || inTags) && matchesType
+    })
+  : []
 
   const handleTypeChange = (e) => {
     const type = e.target.value

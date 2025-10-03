@@ -13,8 +13,8 @@ export default function Header() {
 
   return (
     <nav className="navbar bg-light px-3">
-      <div className="container-fluid">
-        <Link to="/" className="navbar-brand badge text-bg-info">
+      <div className="container-fluid flex-wrap">
+        <Link to="/" className="navbar-brand badge text-bg-info mb-2 mb-sm-0">
           <em>Meetup</em>
         </Link>
         <form className="d-flex" onSubmit={handleSearch}>
