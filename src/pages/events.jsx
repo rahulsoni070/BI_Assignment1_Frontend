@@ -2,7 +2,7 @@ import { Link, useSearchParams } from "react-router-dom"
 import useFetch from "../useFetch"
 
 export default function Event() {
-  const { data, loading, error } = useFetch("https://bi-assignment1-khaki.vercel.app/events")
+  const { data, loading, error } = useFetch("https://bi-assignment1-psi.vercel.app/events")
   const [searchParams, setSearchParams] = useSearchParams()
 
   const searchQuery = searchParams.get("search")?.toLowerCase() || ""

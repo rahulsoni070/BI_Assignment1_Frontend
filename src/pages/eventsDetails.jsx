@@ -7,7 +7,7 @@ export default function EventDetails(){
     const { eventId } = useParams()
 
     console.log(eventId)
-    const { data, loading, error } = useFetch(`https://bi-assignment1-khaki.vercel.app/events/${eventId}`)
+    const { data, loading, error } = useFetch(`https://bi-assignment1-psi.vercel.app/events/${eventId}`)
 
     if (loading) {
         return <p className="text-center">Loading......</p>
