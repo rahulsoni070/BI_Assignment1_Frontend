@@ -10,7 +10,7 @@ export default function EventDetails(){
     const { data, loading, error } = useFetch(`https://bi-assignment1-khaki.vercel.app/events/${eventId}`)
 
     if (loading) {
-        return <p>Loading......</p>
+        return <p className="text-center">Loading......</p>
     }
     if(error) {
         return <p>{error.message}</p>
@@ -23,7 +23,7 @@ export default function EventDetails(){
         <div className="container bg-body-tertiary">
         <Header />
         <hr />
-        <div className="container ms-4">
+        <div className="container px-3 px-md-5">
         <h1>{data.title}</h1>
         <p>Hosted By: <b>{data.host}</b></p>
         <div className="row">

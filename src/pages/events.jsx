@@ -48,8 +48,8 @@ const filteredData = data?.filter((event) => {
         </select>
       </div>
 
-      <div className="container mx-5">
-        {loading && <p>Loading....</p>}
+      <div className="container px-3 px-md-5">
+        {loading && <p className="ms-3">Loading....</p>}
         {error && <p>{error.message}</p>}
         {data?.error && <p>{data.error}</p>}
         {filteredData && !data?.error && (
@@ -70,7 +70,7 @@ const filteredData = data?.filter((event) => {
                       {event.eventType}
                     </span>
                   </div>
-                  <div className="card-body">
+                  <div className="card-body me-3">
                     <p>{event.timing}</p>
                     <h5 className="card-title">{event.title}</h5>
                   </div>
