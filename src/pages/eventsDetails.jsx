@@ -18,6 +18,7 @@ export default function EventDetails(){
     if(!data) {
         return null
     }
+    const speakers = Array.isArray(data.speakers) ? data.speakers : [];
 
     return(
         <div className="container bg-body-tertiary">
@@ -36,7 +37,7 @@ export default function EventDetails(){
             <p><FaRupeeSign className="me-2" /> {data.price}</p>
             <h1>Speakers: </h1>
             <div style={{ display: "flex", gap: "20px", alignItems: "center" }}>
-            {data.speakers.map((speaker) => (
+            {speakers.map((speaker) => (
                 <div key={speaker._id} style={{ textAlign: "center" }}>
                 <img
                     src={speaker.image}
@@ -58,9 +59,9 @@ export default function EventDetails(){
         <h4 className="py-3">Details</h4>
         <p>{data.details}</p>
         <h4>Additional Information:</h4>
-        <p>{data.additionalInfo.join(", ")}</p>
+        <p>{data?.additionalInfo?.join(", ")}</p>
         <h4>Event Tags:</h4>
-        <p className="btn btn-danger">{data.eventTags.join(", ")}</p>
+        <p className="btn btn-danger">{data?.eventTags?.join(", ")}</p>
         </div>
         </div>
     )
